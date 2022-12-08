@@ -30,6 +30,7 @@ public class CollisionScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Saiu da colisão com " + other.name);
+        verificador.SetActive(false); //desativar também o verificador
         texto.enabled = false;
         enter = false;
         portasPlayer.SetActive(false);
@@ -37,7 +38,7 @@ public class CollisionScript : MonoBehaviour
         materialPlayer.color = Color.red;
         materialOraculo.color = Color.red;
 
-        verificador.SetActive(false); //desativar também o verificador
+        
     }
     private void Start()
     {
